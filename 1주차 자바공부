@@ -1,0 +1,40 @@
+package com.javalec.condition;
+
+public class ConditionEx {
+
+	public static void main(String[] args) {
+		//값의 크기 판별
+		int i = 10;
+		int j = 20;
+		int h = 30;
+		int k = 10;
+		
+		if(i > j) {
+			System.out.println("i는 j보다" + (i - j)+"만큼 더 큽니다.");
+		} else {
+			System.out.println("j는 i보다" + (j - i)+"만큼 더 큽니다.");
+		}
+		if((i + j) == h) {
+			System.out.println("i와 j의 합은 h 와 같습니다.");
+		}else {
+			System.out.println("i와 j의 합은 h 와 같지 않습니다.");
+		}
+		
+		int seoulPrice = 10000;
+		
+		if(seoulPrice >= 9000) {
+			System.out.println("서울 물가 비싸다.");
+		}else if(seoulPrice >= 7000) {
+			System.out.println("서울 물가 조금 비싸다.");
+		}else if(seoulPrice >= 5000) {
+			System.out.println("서울 물가 적당하다.");
+		}else {
+			System.out.println("서울 물가 싸다.");
+		}
+		
+		
+	}
+
+}
+
+
