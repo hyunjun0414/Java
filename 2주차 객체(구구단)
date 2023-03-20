@@ -1,0 +1,24 @@
+package com.javalec.object;
+
+import java.util.Scanner;
+
+public class GuGudan {
+
+	public static void main(String[] args) {
+		System.out.println("������ ���� �Է�����!!");
+		Scanner sc = new Scanner(System.in);
+		int input = sc.nextInt();
+		String namefk = sc.next();
+		System.out.println(namefk);
+		GuGudan gu = new GuGudan();
+		gu.gugudan(input);
+
+	}
+
+	public void gugudan(int i) {
+		for (int j = 1; j < 10; j++) {
+			System.out.println(i + "*" + j + "=" + (i * j));
+		}
+	}
+
+}
