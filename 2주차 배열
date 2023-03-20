@@ -1,0 +1,61 @@
+package com.javalec.ex;
+
+public class ArrEx {
+	public static void main(String[] args) {
+		
+		int[] iArr = {10,20,30,40,50};
+		
+		System.out.println(iArr[3]);
+		
+		int[] jArr = new int[3];
+		jArr[0] = 0;
+		jArr[1] = 1;
+		jArr[2] = 2;
+		
+		System.out.println(jArr[1]);
+	}
+}
+
+package com.javalec.ex;
+
+import java.util.Scanner;
+
+public class ArrEx2 {
+
+	public static void main(String[] args) {
+		String[] ArrName = { "����", "ö��", "�浿", "����", "����" };
+		int[] Arr = new int[5];
+		int total = 0;
+		int max = 0;
+		int maxHIndex = 0;
+		int min = 0;
+		int minHIndex = 0;
+
+		Scanner sc = new Scanner(System.in);
+		for (int i = 0; i < Arr.length; i++) {
+			System.out.println(ArrName[i] + "Ű�� �Է��ϼ���");
+			Arr[i] = sc.nextInt();
+			total = total + Arr[i];
+		}
+		System.out.println("�л����� ��� ������" + (total / ArrName.length) + "�Դϴ�.");
+
+		for (int i = 0; i < Arr.length; i++) {
+			if (Arr[i] > max) {
+				max = Arr[i];
+				maxHIndex = i;
+			}
+		}
+		System.out.println("���� ū �л���" + ArrName[maxHIndex] + "�Դϴ�");
+
+		min = max;
+		for (int i = 0; i < Arr.length; i++) {
+			if (Arr[i] < min) {
+				min = Arr[i];
+				minHIndex = i;
+			}
+		}
+
+		System.out.println("���� ���� �л���" + ArrName[minHIndex] + "�Դϴ�");
+	}
+
+}
