@@ -1,0 +1,82 @@
+package com.javalec.classObject;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		ManClass mc1 = new ManClass(15, 160, 60, "010-2181-7864");
+
+		int age = mc1.getAge();
+		System.out.println("age = " + age);
+		
+		mc1.setAge(16);
+		age = mc1.getAge(); // 변경된 나이를 다시 가져옴
+		System.out.println("age = " + age);
+		
+		double bmi = mc1.calculBMI();
+		System.out.println("bmi = " + bmi); // bmi값 출력
+	}
+}
+
+
+
+package com.javalec.classObject;
+
+public class ManClass {
+	
+	
+	private int age;
+	private int height;
+	private int weight;
+	private String phoneNum;
+
+
+	//생성자
+	public ManClass(int age, int height, int weight, String phoneNum) {
+
+		this.age = age;
+		this.height = height;
+		this.weight = weight;
+		this.phoneNum = phoneNum;
+	}
+
+	public double calculBMI() {
+	    double result = weight / ((height / 100.0) * (height / 100.0)); // height를 cm 단위로 계산하기 위해 100.0으로 나누기
+	    return result;
+	    
+	}
+
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public int getWeight() {
+		return weight;
+	}
+
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+
+	public String getPhoneNum() {
+		return phoneNum;
+	}
+
+	public void setPhoneNum(String phoneNum) {
+		this.phoneNum = phoneNum;
+	}
+
+
+}
