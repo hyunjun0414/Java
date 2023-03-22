@@ -1,0 +1,131 @@
+package com.javalec.student;
+
+import java.util.ArrayList;
+
+public class StudentManager {
+
+	ArrayList<Student> student = new ArrayList<Student>();
+	StudentExpel ex = new StudentExpel();
+
+	public static void main(String[] args) {
+
+		StudentManager mg = new StudentManager();
+		mg.addStudent("홍길동", 22, 201910674, "컴공");
+		mg.addStudent("이현준", 26, 201910674, "컴공");
+		mg.addStudent("전미정", 23, 201910674, "병원행정");
+		mg.addStudent("누굴까", 22, 201910674, "고고고컴공");
+		
+		System.out.println(mg.student.get(0).getName());
+		System.out.println(mg.student.get(0).getAge());
+		System.out.println(mg.student.get(0).getStudentNum());
+		System.out.println(mg.student.get(0).getMajor());
+		
+		mg.student.get(0).updateInfo(1, "홍길땅");
+		
+		System.out.println(mg.student.get(0).getName());
+	}
+
+	private void addStudent(String name, int age, int studentNum, String major) {
+		
+		student.add(new Student(name, age, studentNum, major));
+		System.out.println(name + "학생정보 입력 성공!!");
+		
+	}
+
+}
+
+
+
+
+
+package com.javalec.student;
+
+public class Student {
+	private String name;
+	private int age;
+	private int studentNum;
+	private String major;
+	
+	public Student(String name, int age, int studentNum, String major) {
+		this.name = name;
+		this.age = age;
+		this.studentNum = studentNum;
+		this.major = major;
+	}
+	
+	public void updateInfo(int i,String info) {
+		switch(i) {
+		case 1:
+			setName(info);
+			break;
+		
+		case 2:
+			setAge(Integer.parseInt(info));
+			break;
+			
+		case 3:
+			setStudentNum(Integer.parseInt(info));
+			break;
+			
+		case 4:
+			setMajor(info);
+			break;	
+		}
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public int getStudentNum() {
+		return studentNum;
+	}
+
+	public void setStudentNum(int studentNum) {
+		this.studentNum = studentNum;
+	}
+
+	public String getMajor() {
+		return major;
+	}
+
+	public void setMajor(String major) {
+		this.major = major;
+	}
+	
+}
+
+
+
+
+
+package com.javalec.student;
+
+import java.util.ArrayList;
+
+public class StudentExpel {
+
+	ArrayList<Student> ExceptionStudents;
+
+	public StudentExpel() {
+		ExceptionStudents = new ArrayList<Student>();
+	}
+
+	public void addException(String name, int age, int studentNum, String major) {
+
+		ExceptionStudents.add(new Student(name, age, studentNum, major));
+		System.out.println("제적학생 정보 등록 완료");
+	}
+}
