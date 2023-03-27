@@ -1,0 +1,71 @@
+package com.javalec.carInheritance;
+public class MainClass {
+
+	public static void main(String[] args) {
+		Car high = new CarDemo(CarSpec.COLOR1,CarSpec.HANDLE1,CarSpec.DISPLACE1,CarSpec.TIRE1);
+		Car low = new CarDemo(CarSpec.COLOR2,CarSpec.HANDLE1,CarSpec.DISPLACE2,CarSpec.TIRE2);
+		high.getSpec();
+		System.out.println("===========================");
+		low.getSpec();
+	}
+
+}
+
+
+////////////////////
+
+
+public abstract class Car {
+	public String color;
+	public String tire;
+	public int displace;
+	public String handle;
+	
+	public Car(String color, String tire, int displace, String handle) {
+		this.color = color;
+		this.tire = tire;
+		this.displace = displace;
+		this.handle = handle;
+	}
+	public abstract void getSpec();
+}
+
+///////////////////////////////////
+
+public class CarDemo extends Car {
+	private int tax = 1000;
+	
+	public CarDemo(String color, String tire, int displace, String handle) {
+		super(color, tire, displace, handle);		
+	}
+
+	
+	
+	@Override
+	public void getSpec() {
+		System.out.println("색상"+ color);
+		System.out.println("타이어"+ tire);
+		System.out.println("배기량"+ displace);
+		System.out.println("핸들"+ handle);
+		
+		if(displace> 1500) 
+			tax = 3000;
+		System.out.println("세금"+ tax);
+		
+	}
+}
+
+
+///////////////////
+
+
+public class CarSpec  {
+	public static final String COLOR1 = "red";
+	public static final String COLOR2 = "black";
+	public static final String TIRE1 = "1등급";
+	public static final String TIRE2 = "2등급";
+	public static final int DISPLACE1 = 1000;
+	public static final int DISPLACE2 = 2000;
+	public static final String HANDLE1 = "1등급";
+	public static final String HANDLE2 = "2등급";
+}
