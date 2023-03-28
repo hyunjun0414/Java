@@ -1,0 +1,52 @@
+public class MainClass {
+
+	public static void main(String[] args) {
+		InterfaceClass ifc = new InterfaceClass();
+		ifc.getStr();
+		ifc.calculate();
+
+		
+		InterfaceEx ife = new InterfaceClass();
+		InterfaceEx2 ife2 = new InterfaceClass();
+		
+		ife.calculate();
+		ife2.getStr();
+	}
+
+}
+
+/////////////////////////////////////////////////
+
+
+public interface InterfaceEx {
+	public static int CONSTANT_NUM = 1000;
+	
+	public void calculate();
+}
+
+///////////////////////////////////////////////////
+
+public interface InterfaceEx2 {
+
+	public static final String CONSTANT_STRING = "hello world";
+	
+	public String getStr();
+}
+
+///////////////////////////////////////////////
+
+public class InterfaceClass implements InterfaceEx,InterfaceEx2 {
+
+	@Override
+	public String getStr() {
+		System.out.println(CONSTANT_STRING+   "실제구현은 여기서해요");
+		return null;
+	}
+
+	@Override
+	public void calculate() {
+		System.out.println(CONSTANT_NUM+"   실제구현은 여기서해요");
+		
+	}
+
+}
