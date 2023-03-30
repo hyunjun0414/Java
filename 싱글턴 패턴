@@ -1,0 +1,84 @@
+package com.javalec.singlePattern;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		FirstClass fc = new FirstClass();
+		SecondClass sc = new SecondClass();
+
+	}
+
+}
+
+
+
+//////////////////////
+
+
+
+package com.javalec.singlePattern;
+
+public class FirstClass {
+
+	public FirstClass() {
+
+		SingleClass sc = SingleClass.getSingleClass();
+		System.out.println("FirstClass");
+		System.out.println("i = "+ sc.get());
+		sc.set(200);
+		System.out.println("i = "+ sc.get());
+
+	}
+}
+
+
+
+//////////////////////////////////////////
+
+
+
+package com.javalec.singlePattern;
+
+public class SecondClass {
+
+	public SecondClass() {
+		SingleClass sc2 = SingleClass.getSingleClass();
+		System.out.println("SecondClass");
+		System.out.println("i ="+ sc2.get());
+	}
+}
+
+
+/////////////////////////////////////////////
+
+
+
+package com.javalec.singlePattern;
+
+public class SingleClass {
+
+	private static SingleClass SINGLETON_CLASS_INSTANCE = new SingleClass();
+	public int i = 10;
+	
+	private SingleClass() {
+
+	}
+	
+	public static SingleClass getSingleClass() {
+		
+		if(SINGLETON_CLASS_INSTANCE == null) {
+			SINGLETON_CLASS_INSTANCE = new SingleClass();
+		}
+		return SINGLETON_CLASS_INSTANCE;
+		
+	}
+
+	public int get() {
+		return i;
+	}
+
+	public void set(int i) {
+		this.i = i;
+	}
+	
+}
