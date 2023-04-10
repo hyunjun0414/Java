@@ -1,0 +1,117 @@
+package exceptionEx;
+
+public class ExceptionEx2 {
+
+	public static void main(String[] args) {
+
+		int[] arr = {1,2,3};
+		try {
+			System.out.println("==========");
+			System.out.println(arr[3]);
+			System.out.println("**************");
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			System.out.println("무조건실행!!!");
+		}
+	}
+
+}
+
+
+
+package exceptionEx;
+
+import java.util.Scanner;
+
+public class ExceptionTryCatch {
+	public static void main(String[] args) {
+		int i =10;
+		int j = 0;
+		
+		System.out.println(i*j);
+		try {
+			System.out.println(i/j);
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		System.out.println(i+j);
+		System.out.println(i-j);
+	}	
+}
+
+
+
+
+
+=====================================================================
+
+
+
+
+
+
+package throwsEx;
+
+public class ThrowsEx {
+
+	public ThrowsEx() {
+		actionC();
+	}
+	//throws 는 예외가 발생하면 호출한곳으로 가서 처리
+	private void actionA() throws Exception{
+		System.out.println("actionA");
+		
+		int[] iArr = {1,2,3,4};
+		System.out.println(iArr[4]);
+		
+		System.out.println("actionAA");
+	}
+	
+	private void actionB() {
+
+		System.out.println("actionB");
+		
+		try {
+			actionA();
+		}catch(Exception e) {
+			System.out.println("예외는 여기서 처리");
+			System.out.println(e.getMessage());
+		}
+		System.out.println("actionBB");
+	}
+	private void actionC() {
+
+		System.out.println("actionC");
+		actionB();
+		System.out.println("actionCC");
+	}
+}
+
+
+
+
+
+package throwsEx;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+
+		ThrowsEx te = new ThrowsEx();
+		
+		//ArratIndexOutOfBoundsException 
+		//존재하지 않는 Index값 호출시 발생
+		
+		//NullPointerException
+		//존재하지 않는 객체를 가리킬 때 발생
+		
+		//NumberFormatException
+		//문자를 숫자로 처리할때 발생
+	}
+		//ClassNotFoundException
+		//드라이브 이름을 찾지 못했을 때
+	
+		//SQLException
+		//db, url, id, pw가 올바르지 않을때
+}
