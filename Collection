@@ -1,0 +1,86 @@
+package com.javalec.collection;
+
+import java.util.ArrayList;
+
+public class CollectionEx {
+
+	public static void main(String[] args) {
+
+		ArrayList<String> al = new ArrayList<String>();
+		al.add("a");
+		al.add("b");
+		al.add("c");
+		al.add("d");
+		System.out.println(al.toString());
+
+		String index3 = al.get(3);
+		System.out.println("index3 =" + index3);
+
+		al.set(2, "cccccccccc");
+		System.out.println(al.toString());
+
+		int size = al.size();
+		System.out.println("size :" + size);
+
+		al.remove(2);
+		System.out.println(al.toString());
+
+		al.clear();
+		System.out.println(al.toString());
+
+		al = null;
+		System.out.println(al);
+		
+		//null을 넣음으로써 참조를 끊었기 떄문에 리스트에 대한 정보를 얻을 수 없다.
+		System.out.println(al.size());
+
+	}
+
+}
+
+
+
+
+
+
+//////////////////////////////////
+
+
+
+
+
+
+
+
+package com.javalec.collection;
+
+import java.util.LinkedList;
+
+public class LinkedListEx {
+
+	public static void main(String[] args) {
+		LinkedList<String> ll = new LinkedList<String>();
+		ll.add("a");
+		ll.add("b");
+		ll.add("c");
+		ll.add("d");
+		System.out.println(ll.toString());
+
+		String index3 = ll.get(3);
+		System.out.println("index3 =" + index3);
+		
+		ll.set(0, "A");
+		System.out.println(ll.toString());
+		
+		ll.add(0,"a");
+		System.out.println(ll.toString());
+		
+		ll.clear();
+		System.out.println(ll.toString());
+		
+		ll = null;
+		System.out.println(ll);
+			
+	}
+
+}
